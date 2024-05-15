@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Settings - Game Hub</title>
+<link rel="stylesheet" href="styles.css">
+<style>
+  
+  
+  main {
+    padding: 20px;
+  }
+  .settings-section {
+    width: 300px;
+    margin: 0 auto;
+    background-color: #fff;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    text-align: center;
+  }
+  h2 {
+    font-size: 24px;
+    margin-bottom: 20px;
+  }
+  label {
+    display: block;
+    margin-bottom: 10px;
+    font-weight: bold;
+  }
+  input[type="range"] {
+    width: 100%;
+    margin-bottom: 15px;
+  }
+  input[type="submit"] {
+    width: 100%;
+    padding: 10px;
+    background-color: grey;
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+  }
+  input[type="submit"]:hover {
+    background-color: gold;
+  }
+</style>
+<script src="logout.js"></script>
+</head>
+<body>
+<header>
+    <div class="navbar">
+        <div class="nav-item"><a href="index.html">HOME</a></div>
+        <div class="nav-item"><a href="success.html">SUCCESS</a></div>
+        <h1 class="nav-title">GAME HUB</h1>
+        <div class="nav-item"><a href="profile.html">PROFILE</a></div>
+        <div class="nav-item"><a href="settings.html">SETTING</a></div>
+      </div>
+</header>
+<main>
+  <section class="settings-section">
+    <h2>SETTINGS</h2>
+    <form id="settings-form">
+      <label for="volume">VOLUME:</label>
+      <input type="range" id="volume" name="volume" min="0" max="100"><br>
+
+      
+      <br>
+
+      <label for="dark-mode">DARK MODE:</label>
+      <input type="checkbox" id="dark-mode" name="dark-mode"><br>
+
+      <input type="submit" value="Save Settings">
+    </form>
+  </section>
+</main>
+<footer>
+</footer>
+</body>
+<script>
+  document.addEventListener("DOMContentLoaded", function() {
+    const darkModeCheckbox = document.getElementById('dark-mode');
+  
+    // Fonction pour basculer le mode sombre
+    function toggleDarkMode(isDark) {
+      if (isDark) {
+        document.body.classList.add('dark-mode');
+        localStorage.setItem('darkMode', 'enabled');
+      } else {
+        document.body.classList.remove('dark-mode');
+        localStorage.removeItem('darkMode');
+      }
+    }
+  
+    // Événement de changement pour la case à cocher du mode sombre
+    darkModeCheckbox.addEventListener('change', function() {
+      toggleDarkMode(this.checked);
+    });
+  
+    // Vérifier le réglage du mode sombre au chargement de la page
+    if (localStorage.getItem('darkMode') === 'enabled') {
+      darkModeCheckbox.checked = true;
+      toggleDarkMode(true);
+    }
+  });
+</script>
+<script src="Cookie.js"></script>
+</html>

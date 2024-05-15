@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Game Hub</title>
+<link rel="stylesheet" href="styles.css">
+<script src="logout.js"></script>
+
+
+
+<link href="https://db.onlinewebfonts.com/c/26afb49b8b7dda2c10686589d6fc7b55?family=Architype+Aubette+W90" rel="stylesheet">
+</head>
+<body>
+<header>
+<div class="navbar">
+  <div class="nav-item"><a href="index.html">HOME</a></div>
+  <div class="nav-item"><a href="success.html">SUCCESS</a></div>
+  <h1 class="nav-title">GAME HUB</h1>
+  <div class="nav-item"><a href="profile.html">PROFILE</a></div>
+  <div class="nav-item"><a href="settings.html">SETTING</a></div>
+</div>
+
+</header>
+<main>
+    <br>
+  
+  
+  <div class="game" id="game1">
+    <a href="jeu1.html" class="game-title">GAME 1</a>
+  </div>
+  <div class="game" id="game2">
+    <a href="/GAMES/jeu2.html" class="game-title">GAME 2</a>
+  </div>
+</main>
+<footer>
+  <p>&copy; 2024 Game Hub. Tous droits réservés.</p>
+</footer>
+
+
+<script>
+  document.querySelector('.nav-title').addEventListener('click', function() {
+    this.classList.add('grow-and-change-color');
+
+    // Optionnel: Supprimer la classe après que l'animation soit terminée pour permettre des clics répétés
+    this.addEventListener('animationend', () => {
+      this.classList.remove('grow-and-change-color');
+    });
+  });
+</script>
+
+  
+<script src="darkmode.js"></script>
+<script src="Cookie.js"></script>
+</body>
+
+  
+</html>
+

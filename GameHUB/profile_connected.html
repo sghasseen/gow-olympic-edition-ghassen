@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Profil Connecté - Game Hub</title>
+  <link rel="stylesheet" href="styles.css">
+  <script src="logout.js"></script>
+</head>
+<body>
+  <header>
+    <div class="navbar">
+        <div class="nav-item"><a href="index.html">HOME</a></div>
+        <div class="nav-item"><a href="success.html">SUCCESS</a></div>
+        <h1 class="nav-title">GAME HUB</h1>
+        <div class="nav-item active"><a href="profile_connected.html">PROFILE</a></div>
+        <div class="nav-item"><a href="settings.html">SETTING</a></div>      
+    </div>
+  </header>
+  <main id="login">
+    <h1>Bienvenue, <span id="user-name-display"></span>!</h1>
+    <div class="profile-info">
+        <h2>Voici votre profil:</h2>
+        <table>
+            <tr>
+                <td>Nom d'utilisateur :</td>
+                <td><span id="user-name"></span></td>
+            </tr>
+            <tr>
+                <td>Email :</td>
+                <td><span id="user-email"></span></td>
+            </tr>
+        </table>
+    </div>
+  </main>
+  <footer>
+    <p>&copy; 2024 Game Hub. Tous droits réservés.</p>
+  </footer>
+  <script>
+    document.getElementById('user-name-display').textContent = localStorage.getItem('currentUser');
+    document.getElementById('user-name').textContent = localStorage.getItem('currentUser');
+    document.getElementById('user-email').textContent = localStorage.getItem('currentUser');
+  </script>
+  
+  <script>
+    function logout() {
+        localStorage.removeItem('currentUser'); // Remove the current user information
+        localStorage.removeItem('userLoggedIn'); // Remove the login status
+        window.location.href = 'index.html'; // Redirect to the index page
+    }
+    document.addEventListener("DOMContentLoaded", function() {
+    if (!localStorage.getItem('userLoggedIn')) {
+        window.location.href = 'profile.html'; // Redirect to the login page if the user is not logged in
+    } else {
+        // User is logged in, proceed with displaying the profile
+        const userEmail = localStorage.getItem('currentUser');
+        // Use userEmail to retrieve and display other user information
+    }
+});
+</script>
+  <script src="darkmode.js"></script>
+  <script>
+document.addEventListener('DOMContentLoaded', () => {
+    const userLoggedIn = localStorage.getItem('userLoggedIn');
+    const profileLink = document.querySelector('.nav-item a[href="profile_connected.html"]');
+    const navbar = document.querySelector('.navbar');
+
+    if (userLoggedIn) {
+        // Remove the profile_connected button
+        const profileConnectedButton = document.querySelector('.nav-item a[href="profile_connected.html"]');
+        profileConnectedButton.parentElement.style.display = 'none';
+
+        // Add the logout button
+        const logoutButton = document.createElement('button');
+        logoutButton.textContent = 'Déconnexion';
+        logoutButton.addEventListener('click', function() {
+            logout();
+        });
+        navbar.appendChild(logoutButton);
+    } else {
+        // Change the profile link back to profile.html
+        profileLink.setAttribute('href', 'profile.html');
+    }
+});
+
+    
+
+  </script>
+</body>
+</html>

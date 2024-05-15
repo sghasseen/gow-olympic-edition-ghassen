@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Profile - Game Hub</title>
+<link rel="stylesheet" href="styles.css">
+<style>
+  main {
+    padding: 20px;
+  }
+  .auth-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+  }
+  h2 {
+    font-size: 24px;
+    margin-bottom: 15px;
+  }
+  form {
+    width: 300px;
+    background-color:white;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  }
+  label {
+    display: block ;
+    margin-bottom: 10px;
+    font-weight: bold;
+  }
+  input[type="text"],
+  input[type="email"],
+  input[type="password"] {
+    width: calc(100% - 20px);
+    padding: 10px;
+    margin-bottom: 15px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+  }
+  button[type="submit"] {
+    width: 100%;
+    padding: 10px;
+    background-color: yellowgreen;
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+  }
+  button[type="submit"]:hover {
+    background-color: #333;
+  }
+</style>
+<script src="logout.js"></script>
+</head>
+<body>
+<header>
+    <div class="navbar">
+        <div class="nav-item"><a href="index.html">HOME</a></div>
+        <div class="nav-item"><a href="success.html">SUCCESS</a></div>
+        <h1 class="nav-title">GAME HUB</h1>
+        <div class="nav-item"><a href="profile.html">PROFILE</a></div>
+        <div class="nav-item"><a href="settings.html">SETTING</a></div>
+      </div>
+</header>
+<main>
+  <div class="auth-container">
+    <!-- Sign In Form -->
+    <section class="sign-in-section">
+      <h2>Connexion</h2>
+      <form id="sign-in-form">
+        <div class="form-field">
+          <label for="signin-email">Email:</label>
+          <input type="email" id="signin-email" name="email" required>
+        </div>
+        <div class="form-field">
+          <label for="signin-password">Mot de passe:</label>
+          <input type="password" id="signin-password" name="password" required>
+        </div>
+        <button type="submit">Se connecter</button>
+      </form>
+    </section>
+      
+
+    <!-- Sign Up Form -->
+    <section class="sign-up-section">
+      <h2>Inscription</h2>
+      <form id="sign-up-form">
+        <div class="form-field">
+          <label for="signup-username">Nom d'utilisateur:</label>
+          <input type="text" id="signup-username" name="username" required>
+        </div>
+        <div class="form-field">
+          <label for="signup-email">Email:</label>
+          <input type="email" id="signup-email" name="email" required>
+        </div>
+        <div class="form-field">
+          <label for="signup-password">Mot de passe:</label>
+          <input type="password" id="signup-password" name="password" required>
+        </div>
+        <button type="submit">S'inscrire</button>
+      </form>
+    </section>
+  </div>
+</main>
+<footer>
+</footer>
+</body>
+<script>
+document.addEventListener('DOMContentLoaded', function() {
+  document.getElementById('sign-up-form').addEventListener('submit', function(e) {
+      e.preventDefault();
+      const username = document.getElementById('signup-username').value;
+      const email = document.getElementById('signup-email').value;
+      const password = document.getElementById('signup-password').value;
+      const users = JSON.parse(localStorage.getItem('users') || '[]');
+      const encodedPassword = btoa(password);
+      users.push({ username, email, password: encodedPassword });
+      localStorage.setItem('users', JSON.stringify(users));
+      alert('Inscription réussie. Vous pouvez maintenant vous connecter.');
+  });
+
+  document.getElementById('sign-in-form').addEventListener('submit', function(e) {
+      e.preventDefault();
+      const email = document.getElementById('signin-email').value;
+      const password = document.getElementById('signin-password').value;
+      const encodedPassword = btoa(password);
+      const users = JSON.parse(localStorage.getItem('users') || '[]');
+      const user = users.find(user => user.email === email && user.password === encodedPassword);
+      if (user) {
+          localStorage.setItem('currentUser', email);
+          localStorage.setItem('userLoggedIn', 'true');
+          window.location.href = 'profile_connected.html';
+      } else {
+          alert('Email ou mot de passe incorrect.');
+      }
+  });
+});
+</script>
+  
+<script src="darkmode.js"></script>
+</html>

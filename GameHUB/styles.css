@@ -1,0 +1,500 @@
+@font-face {
+  font-family: "Architype Aubette W90";
+  src: url("https://db.onlinewebfonts.com/t/26afb49b8b7dda2c10686589d6fc7b55.eot");
+  src: url("https://db.onlinewebfonts.com/t/26afb49b8b7dda2c10686589d6fc7b55.eot?#iefix")format("embedded-opentype"),
+  url("https://db.onlinewebfonts.com/t/26afb49b8b7dda2c10686589d6fc7b55.woff2")format("woff2"),
+  url("https://db.onlinewebfonts.com/t/26afb49b8b7dda2c10686589d6fc7b55.woff")format("woff"),
+  url("https://db.onlinewebfonts.com/t/26afb49b8b7dda2c10686589d6fc7b55.ttf")format("truetype"),
+  url("https://db.onlinewebfonts.com/t/26afb49b8b7dda2c10686589d6fc7b55.svg#Architype Aubette W90")format("svg");
+}
+
+body, html {
+  margin: 0;
+  padding: 0;
+  font-family: 'Courier New', Courier, monospace;
+  background-color: #f4f4f4;
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+}
+header {
+  width: 100%;
+  background: #333; /* Dark background for the header */
+  box-shadow: 0 2px 4px rgba(0,0,0,0.1); /* Add some depth with a shadow */
+}
+
+.navbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0 5%;
+  color: #fff;
+  font-family: "Architype Aubette W90";
+}
+
+.nav-item {
+  padding: 1em;
+  cursor: pointer;
+  font-size: 2em; /* Adjust the font size if needed */
+  color: whitesmoke;
+  font-family: "Architype Aubette W90";
+}
+
+.nav-title {
+  font-size: 6em; /* Increase font size for the main title */
+  margin: 0.5em 0;
+  font-weight: bold; /* Make the title bold */
+  color: yellowgreen;
+}
+
+main {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-grow: 1; /* Allow the main content to grow and use available space */
+  padding: 2em 0;
+}
+
+.game {
+  background-color: #555; /* Lighter grey for game boxes */
+  border-radius: 40px;
+  width: 50%; /* Increase the width of game boxes */
+  height: 250px; /* Increase the height of game boxes */
+  margin: 3em; /* Add some margin between the game boxes */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: transform 0.3s;
+}
+
+.game:hover {
+  transform: scale(1.1);
+
+}
+
+.game-title {
+  font-size: 3em; /* Increase font size for game titles */
+  color: #fff;
+  text-decoration: none;
+  text-align: center;
+  display: block ; /* Ensure the text is centered correctly */
+  font-family: "Architype Aubette W90";
+
+}
+
+footer {
+  width: 100%;
+  background: #333; /* Dark background for the footer */
+  color: #fff;
+  text-align: center;
+  padding: 1em 0;
+}
+
+footer p {
+  margin: 0;
+  font-size: 1em;
+}
+
+
+.settings-section {
+  background-color: #fff; /* Choose a background color that fits your design */
+  padding: 20px;
+  margin: 20px;
+  border-radius: 10px;
+}
+
+.settings-section h2 {
+  margin-bottom: 20px;
+}
+
+#settings-form {
+  display: flex;
+  flex-direction: column;
+}
+
+#settings-form label {
+  margin-bottom: 5px;
+}
+
+#settings-form input[type=range],
+#settings-form select,
+#settings-form input[type=checkbox] {
+  margin-bottom: 20px;
+}
+
+#settings-form input[type=submit] {
+  padding: 100px;
+  font-size: 1em;
+  cursor: pointer;
+}
+
+/* Style for all states of a link to prevent color change and underline */
+a:link, a:visited, a:hover, a:active {
+  color: inherit; /* This makes the link use the color of its parent element */
+  text-decoration: none; /* This removes the underline */
+}
+
+/* Additional styling for hover state if needed */
+a:hover {
+  text-decoration: underline; /* Only if you want underline on hover */
+}
+
+
+.auth-container {
+  display: flex;
+  justify-content: space-around;
+  width: 100%;
+}
+
+.sign-in-section, .sign-up-section {
+  margin: 20px;
+  padding: 20px;
+  background-color: #f4f4f4;
+  border-radius: 10px;
+}
+
+.form-field {
+  margin-bottom: 15px;
+}
+
+.form-field label {
+  display: block;
+  margin-bottom: 5px;
+}
+
+.form-field input {
+  width: calc(100% - 20px);
+  padding: 10px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+}
+
+button {
+  background-color: yellowgreen;
+  color: white;
+  padding: 10px 15px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+button:hover {
+  background-color: #0056b3;
+}
+
+@font-face {
+  font-family: "Architype Aubette W90";
+  src: url("https://db.onlinewebfonts.com/t/26afb49b8b7dda2c10686589d6fc7b55.eot");
+  src: url("https://db.onlinewebfonts.com/t/26afb49b8b7dda2c10686589d6fc7b55.eot?#iefix") format("embedded-opentype"),
+       url("https://db.onlinewebfonts.com/t/26afb49b8b7dda2c10686589d6fc7b55.woff2") format("woff2"),
+       url("https://db.onlinewebfonts.com/t/26afb49b8b7dda2c10686589d6fc7b55.woff") format("woff"),
+       url("https://db.onlinewebfonts.com/t/26afb49b8b7dda2c10686589d6fc7b55.ttf") format("truetype"),
+       url("https://db.onlinewebfonts.com/t/26afb49b8b7dda2c10686589d6fc7b55.svg#Architype Aubette W90") format("svg");
+}
+
+body, html {
+  font-family: 'Courier New', Courier, monospace;
+  background-color: #121212; /* Dark mode background for gaming vibe */
+}
+
+header {
+  background: #202020; /* Darker shade for header */
+  box-shadow: 0 4px 8px rgba(0,0,0,0.5); /* More pronounced shadow for depth */
+}
+
+.nav-item {
+  transition: color 0.3s ease; /* Smooth transition for hover effects */
+}
+
+.nav-item:hover, .nav-item a:hover {
+  color: #4CAF50; /* Gaming green for hover */
+}
+
+.nav-title {
+  color: #FFD700; /* Golden color for the main title for a premium feel */
+}
+
+.game {
+  background-color: #525151; /* Slightly lighter grey for contrast */
+  transition: transform 0.3s ease, box-shadow 0.3s ease; /* Smooth transitions for hover */
+}
+
+.game:hover {
+  transform: translateY(-10px); /* Move up slightly on hover */
+  box-shadow: 0 10px 20px rgba(0,255,0,0.2); /* Green glow for gaming effect */
+}
+
+.game-title {
+  color: #00FF00; /* Bright green for titles to stand out */
+}
+
+footer {
+  background: #202020; /* Matching the header */
+}
+
+button:hover {
+  background-color: #ff5722; /* A more vibrant color for interactive elements */
+}
+
+/* Add keyframe animations for dynamic elements */
+@keyframes pulse {
+  0% {
+    transform: scale(1);
+    box-shadow: 0 0 0 0 rgba(0, 255, 0, 0.7);
+  }
+  70% {
+    transform: scale(1.05);
+    box-shadow: 0 0 0 10px rgba(0, 255, 0, 0);
+  }
+  100% {
+    transform: scale(1);
+    box-shadow: 0 0 0 0 rgba(0, 255, 0, 0);
+  }
+}
+
+.nav-item a {
+  display: inline-block;
+  animation: pulse 2s infinite;
+}
+
+@keyframes growAndColorChange {
+  0% {
+    transform: scale(1);
+    color: yellowgreen;
+  }
+  50% {
+    transform: scale(1.2);
+    color: #FFD700; /* Un jaune doré */
+  }
+  100% {
+    transform: scale(1);
+    color: yellowgreen;
+  }
+}
+
+.grow-and-change-color {
+  animation: growAndColorChange 1s ease forwards;
+}
+
+/* The side panel style */
+.side-panel {
+  height: 100%;
+  width: 0; /* Panel width is 0 by default */
+  position: fixed; /* Fixed position to stay in place */
+  z-index: 1; /* Sit on top */
+  top: 0;
+  right: 0; /* Slide from the right */
+  background-color: #111; /* Dark background color */
+  overflow-x: hidden; /* Disable horizontal scroll */
+  padding-top: 60px; /* Some padding at the top */
+  transition: 0.5s; /* Smooth transition for opening and closing */
+}
+
+/* Style for content inside the panel */
+.side-panel h2, .side-panel p {
+  color: white;
+  margin: 20px;
+}
+
+/* Styled close button */
+.closebtn {
+  position: absolute;
+  top: 0;
+  right: 25px;
+  font-size: 36px;
+  margin-left: 50px;
+  color: white;
+  text-decoration: none;
+}
+
+
+.message-hidden {
+  display: none;
+
+}
+
+@keyframes growAndFadeIn {
+  from {
+    transform: scale(0);
+    opacity: 0;
+  }
+  to {
+    transform: scale(1);
+    opacity: 1;
+  }
+}
+
+.message-visible {
+  display: block;
+  animation: growAndFadeIn 1.5s forwards;
+  text-align: center;
+  font-size: 20px;
+  color: white; /* Or any color that fits your design */
+}
+
+
+
+#Connect4 {
+  text-align: center;
+  color: white;
+
+}
+
+#board {
+  height: 540px;
+  width: 630px;
+  background-color: blue;
+  border: 10px solid navy;
+  margin: 0 auto;
+  display: none; /* Assurez-vous que cette ligne est commentée ou supprimée si vous voulez que le board soit visible dès le chargement de la page */
+  flex-wrap: wrap;
+}
+
+.tile {
+  height: 70px;
+  width: 70px;
+  margin: 5px;
+  background-color: white;
+  border-radius: 100%; /* Circle */
+  border: 5px solid navy;
+}
+
+/* Correction des couleurs pour correspondre aux noms des classes */
+.red-piece {
+  background-color: red;
+}
+
+.yellow-piece {
+  background-color: yellow;
+}
+
+
+#restartButton {
+  padding: 10px 20px;
+  font-size: 16px;
+  color: black;
+  background-color: yellow;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  margin-top: 20px;
+}
+
+#restartButton:hover {
+  background-color: yellowgreen;
+}
+
+
+
+.difficultyChoice {
+  background-color: yellow; /* Couleur de fond jaune */
+  color: black; /* Couleur de texte noire, si vous souhaitez changer la couleur du texte */
+}
+
+
+/* Stylise le message de succès global */
+#successMessage {
+  color: white;
+  font-size: 1.5em; /* Taille de police adaptée */
+  background-color: #333; /* Fond sombre pour un bon contraste */
+  padding: 20px;
+  border-radius: 10px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3); /* Ombre pour effet de profondeur */
+  margin: 20px auto; /* Centrage du bloc */
+  max-width: 600px; /* Largeur maximale pour une meilleure lisibilité */
+  text-align: center; /* Centre le texte pour un aspect plus net */
+}
+
+/* Stylise et anime les paragraphes de record */
+.record {
+  font-weight: bold;
+  color: yellow;
+  cursor: pointer;
+  transition: transform 0.2s ease, color 0.2s ease; /* Transition douce pour le survol */
+}
+
+.record:hover {
+  transform: scale(1.1); /* Augmente légèrement la taille au survol */
+  color: #FFD700; /* Change la couleur au survol pour un jaune doré */
+}
+
+@keyframes pulse {
+  0%, 100% {
+    transform: scale(1); /* État initial et final : aucune échelle */
+    box-shadow: none;
+  }
+  50% {
+    transform: scale(1.05); /* Augmente légèrement la taille */
+    box-shadow: 0 0 10px yellow; /* Ajoute une ombre externe jaune */
+  }
+}
+
+.record {
+  animation: pulse 2s infinite; /* Applique l'animation "pulse" */
+}
+
+
+
+
+
+/* Styles pour le mode "sombre" avec fond blanc */
+.dark-mode {
+  background-color: white; /* Fond blanc */
+  color: #333; /* Texte sombre pour contraste */
+}
+
+/* Vous pouvez ajuster d'autres éléments spécifiques pour le mode sombre si nécessaire */
+.dark-mode .navbar, .dark-mode footer {
+  background-color: #eaeaea;
+}
+
+.dark-mode .nav-item a, .dark-mode footer {
+  color: #333; /* Couleur de texte sombre pour le contraste */
+}
+
+.dark-mode #Connect4 {
+  color: black; /* Change la couleur du texte en noir dans le mode sombre */
+}
+
+.dark-mode #successMessage {
+  color: black;
+  font-size: 1.5em; /* Taille de police adaptée */
+  background-color: grey; /* Fond sombre pour un bon contraste */
+ 
+}
+
+#login {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  background-color: #333;
+  padding: 20px;
+}
+
+.profile-info {
+  background-color: #f4f4f4; /* Fond plus clair pour le tableau */
+  padding: 20px;
+  border-radius: 10px;
+  box-shadow: 0 2px 4px rgba(0,0,0,0.2);
+  margin-top: 20px; /* Espacement entre le message de bienvenue et le tableau */
+}
+
+.profile-info h2 {
+  margin-top: 0;
+}
+
+table {
+  border-collapse: collapse;
+  width: 100%;
+}
+
+td {
+  padding: 8px;
+  text-align: left;
+  border-bottom: 1px solid #ddd; /* Ligne de séparation entre les lignes */
+}
+
+/* Style pour la première colonne pour aligner le texte à droite si désiré */
+table td:first-child {
+  text-align: left;
+}

@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Succès | Game Hub</title>
+    <link rel="stylesheet" href="styles.css">
+    <script src="logout.js"></script>
+</head>
+<body>
+<header>
+    <div class="navbar">
+        <div class="nav-item"><a href="index.html">HOME</a></div>
+        <div class="nav-item active"><a href="success.html">SUCCESS</a></div>
+        <h1 class="nav-title">GAME HUB</h1>
+        <div class="nav-item"><a href="profile.html">PROFILE</a></div>
+        <div class="nav-item"><a href="settings.html">SETTING</a></div>
+    </div>
+</header>
+
+<main>
+    <div id="successMessage">
+        <h2>Record actuel</h2>
+        <p id="record"></p>
+        <p id="level"></p>
+    </div>
+</main>
+
+<footer>
+    <p>&copy; 2024 Game Hub. Tous droits réservés.</p>
+</footer>
+
+<script>
+document.addEventListener("DOMContentLoaded", function() {
+    const userEmail = localStorage.getItem('currentUser'); // Retrieve the current user's email
+    const difficulties = ['facile', 'moyen', 'difficile'];
+    const successMessageDiv = document.getElementById('successMessage');
+
+    if (!userEmail) {
+        successMessageDiv.innerHTML = '<p>Veuillez vous connecter pour voir vos records.</p>';
+        var redirectButton = document.createElement('button');
+        redirectButton.textContent = 'Se Connecter';
+        redirectButton.addEventListener('click', function() {
+            window.location.href = 'profile.html'; // Redirect to the profile page if not logged in
+        });
+        successMessageDiv.appendChild(redirectButton);
+        return;
+    }
+
+    
+    // Loop through each difficulty level
+    difficulties.forEach(function(difficulty) {
+        let scoreKey = `${userEmail}_${difficulty}_high_score`; // Construct the key for retrieving the high score
+        let score = localStorage.getItem(scoreKey); // Retrieve the high score
+
+        let scoreElement = document.createElement('p');
+        scoreElement.className = 'score';
+        if (score !== null) {
+            scoreElement.innerText = `Score pour ${difficulty} : ${timeToString(score)}`; // Display the high score
+        } else {
+            scoreElement.innerText = `Aucun score trouvé pour ${difficulty}`;
+        }
+        successMessageDiv.appendChild(scoreElement); // Append the score element to the successMessageDiv
+    });
+
+    // Function to convert milliseconds to formatted time string
+    function timeToString(time) {
+        let diffInHrs = time / 3600000;
+        let hh = Math.floor(diffInHrs);
+
+        let diffInMin = (diffInHrs - hh) * 60;
+        let mm = Math.floor(diffInMin);
+
+        let diffInSec = (diffInMin - mm) * 60;
+        let ss = Math.floor(diffInSec);
+
+        let diffInMs = (diffInSec - ss) * 100;
+        let ms = Math.floor(diffInMs);
+
+        let formattedMM = mm.toString().padStart(2, "0");
+        let formattedSS = ss.toString().padStart(2, "0");
+        let formattedMS = ms.toString().padStart(2, "0");
+
+        return `${formattedMM}:${formattedSS}:${formattedMS}`;
+    }
+});
+</script>
+
+<script src="darkmode.js"></script>
+<script src="Cookie.js"></script>
+</body>
+</html>

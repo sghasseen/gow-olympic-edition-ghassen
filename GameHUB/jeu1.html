@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Game Hub</title>
+<link rel="stylesheet" href="styles.css">
+<script src="jeu.js" defer></script>
+<script src="logout.js" defer></script> <!-- Assurez-vous d'avoir un fichier logout.js implémentant la fonction logout -->
+<link href="https://db.onlinewebfonts.com/c/26afb49b8b7dda2c10686589d6fc7b55?family=Architype+Aubette+W90" rel="stylesheet">
+</head>
+<body>
+<header>
+<div class="navbar">
+  <div class="nav-item"><a href="index.html">HOME</a></div>
+  <div class="nav-item"><a href="success.html">SUCCESS</a></div>
+  <h1 class="nav-title">GAME HUB</h1>
+  <div class="nav-item"><a href="profile.html">PROFILE</a></div>
+  <div class="nav-item"><a href="settings.html">SETTING</a></div>
+
+</div>
+
+</header>
+<main>
+<div id ="Connect4">
+    <h1>Connect 4</h1>
+    <div id="timer">00:00:00</div>
+    <br>
+    <br>
+
+    <div id="difficultySelection">
+        <h2>Choose Difficulty</h2>
+        <button class="difficultyChoice" data-difficulty="facile">Easy</button>
+        <button class="difficultyChoice" data-difficulty="moyen">Medium</button>
+        <button class="difficultyChoice" data-difficulty="difficile">Hard</button>
+    </div>
+    
+    <div id="board"></div>
+    <h2 id="winner"></h2>
+    <button id="restartButton">Restart Game</button>
+    <br>
+
+</div>
+</main>
+<br>
+<footer>
+  <p id="checkRulesBtn">CLICK POUR LIRE LES REGLES</p>
+  <div id="rulesMessage" class="message-hidden">
+    Puissance 4 est un jeu pour deux joueurs où le but est d'aligner quatre jetons de sa couleur horizontalement, verticalement, ou diagonalement. Les joueurs insèrent à tour de rôle un jeton dans une des sept colonnes d'un plateau vertical, cherchant à créer une ligne de quatre jetons tout en bloquant l'adversaire. Le premier à aligner quatre jetons gagne.
+  </div>
+</footer>
+
+<script>
+  document.querySelector('.nav-title').addEventListener('click', function() {
+    this.classList.add('grow-and-change-color');
+
+    // Optionnel: Supprimer la classe après que l'animation soit terminée pour permettre des clics répétés
+    this.addEventListener('animationend', () => {
+      this.classList.remove('grow-and-change-color');
+    });
+  });
+</script>
+
+<script>
+  document.getElementById('checkRulesBtn').addEventListener('click', function() {
+    var rulesContainer = document.getElementById('rulesContainer');
+    rulesContainer.classList.remove('rules-hidden');
+    rulesContainer.classList.add('rules-visible');
+
+    // Attendez la fin de l'animation pour cacher le conteneur des règles
+    rulesContainer.addEventListener('animationend', () => {
+      rulesContainer.classList.add('rules-hidden');
+      rulesContainer.classList.remove('rules-visible');
+    });
+  });
+</script>
+<script>
+  document.getElementById('checkRulesBtn').addEventListener('click', function() {
+    var rulesMessage = document.getElementById('rulesMessage');
+    rulesMessage.classList.remove('message-hidden');
+    rulesMessage.classList.add('message-visible');
+
+    // Optionnel : cachez le message après l'animation
+    setTimeout(() => {
+      rulesMessage.classList.remove('message-visible');
+      rulesMessage.classList.add('message-hidden');
+    }, 4000); // Attendez 4 secondes avant de cacher le message
+  });
+</script>
+
+  
+<script src="darkmode.js"></script>
+<script src="Cookie.js"></script>
+
+</body>
+</html>
+
